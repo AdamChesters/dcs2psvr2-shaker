@@ -1,0 +1,125 @@
+#pragma once
+#include "core.hpp"
+namespace shaker {
+inline const Json& supportContent(){
+    static const Json content=Json::parse(R"SUPPORT({
+  "schemaVersion": 2,
+  "title": "Feedback / Support",
+  "intro": "Thanks for using {appName}. I like to fix bugs and implement features rapidly. Issue? Idea? Let's work on it! Contact me anywhere you prefer.",
+  "donationTitle": "Support",
+  "donationText": "I love making things to have fun, share fun, and make life a lil better. If you got value out of one of them, feel free to buy us a coffee. Or a house. Push comes to shove, I prefer Aston Martin. Supporters get golden crowns on the Discord / tags on the subreddit!",
+  "actions": {
+    "update": "Check for updates",
+    "feedback": "Feedback form"
+  },
+  "socials": [
+    {
+      "id": "discord",
+      "label": "Discord",
+      "url": "https://discord.gg/fs4WyaQPA",
+      "icon": "assets/discord.svg",
+      "color": "#5865f2"
+    },
+    {
+      "id": "reddit",
+      "label": "Reddit",
+      "url": "https://www.reddit.com/r/AdamChsLab/",
+      "icon": "assets/reddit.svg",
+      "color": "#ff4500"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/AdamChesters",
+      "icon": "assets/github-mark.svg",
+      "color": "#24292f"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/adamchesters/",
+      "icon": "assets/linkedin.svg",
+      "color": "#0a66c2"
+    },
+    {
+      "id": "website",
+      "label": "AdamCh.com",
+      "url": "https://adamch.com",
+      "icon": "assets/website.svg",
+      "color": "#475569"
+    }
+  ],
+  "platforms": [
+    {
+      "id": "github",
+      "label": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/AdamChesters",
+      "notes": [
+        "Account required",
+        "0% fees to creator"
+      ],
+      "icon": "assets/github.svg"
+    },
+    {
+      "id": "buymeacoffee",
+      "label": "Buy Me a Coffee",
+      "url": "https://buymeacoffee.com/adamch",
+      "notes": [
+        "Guest checkout available"
+      ],
+      "icon": "assets/buymeacoffee.svg"
+    },
+    {
+      "id": "paypal",
+      "label": "Support with PayPal",
+      "url": "https://www.paypal.com/donate/?business=KLHSZPXTSVSAU&no_recurring=0&item_name=I%27ve+donated+to+lots+of+small+creators+for+their+useful+little+tools%2C+now+I+create+them.+Dig+one?+I%27d+love+your+support.&currency_code=AUD",
+      "notes": [
+        "Guest checkout available",
+        "Least preferred option"
+      ],
+      "icon": "assets/paypal.svg"
+    }
+  ],
+  "feedback": {
+    "endpoint": "https://adamch-app-feedback.adam-chesters.workers.dev/feedback",
+    "title": "Feedback / feature request",
+    "intro": "Have an idea or found a problem? Send it to the {appName} team.",
+    "fields": [
+      {
+        "id": "name",
+        "label": "Name",
+        "maxLength": 100,
+        "required": true
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "maxLength": 254,
+        "required": true
+      },
+      {
+        "id": "message",
+        "label": "Message",
+        "maxLength": 4000,
+        "required": true
+      }
+    ],
+    "placeholder": "What would you like to improve?",
+    "privacy": "Only your name, email, message, app name and version are sent. No logs or app data are attached.",
+    "submit": "Send feedback",
+    "success": "Feedback sent. Thank you!",
+    "failure": "Delivery could not be confirmed. Your message is still here. Please try again later.",
+    "ack": {
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "body": {
+        "ok": true
+      },
+      "maxBytes": 1024
+    }
+  }
+}
+)SUPPORT");
+    return content;
+}
+}

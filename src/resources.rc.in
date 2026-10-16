@@ -1,0 +1,37 @@
+#include "@CMAKE_CURRENT_SOURCE_DIR@/src/resource.h"
+#include <winver.h>
+
+IDI_APP_ICON ICON "@CMAKE_CURRENT_SOURCE_DIR@/assets/dcs2psvr2-shaker.ico"
+
+IDR_APP_LOGO RCDATA "@CMAKE_CURRENT_SOURCE_DIR@/assets/dcs2psvr2-shaker.png"
+IDR_SOCIAL_DISCORD RCDATA "@CMAKE_CURRENT_SOURCE_DIR@/support/assets/discord.png"
+IDR_SOCIAL_REDDIT RCDATA "@CMAKE_CURRENT_SOURCE_DIR@/support/assets/reddit.png"
+IDR_SOCIAL_GITHUB RCDATA "@CMAKE_CURRENT_SOURCE_DIR@/support/assets/github-mark.png"
+IDR_SOCIAL_LINKEDIN RCDATA "@CMAKE_CURRENT_SOURCE_DIR@/support/assets/linkedin.png"
+IDR_SOCIAL_WEBSITE RCDATA "@CMAKE_CURRENT_SOURCE_DIR@/support/assets/website.png"
+
+1 VERSIONINFO
+FILEVERSION @PROJECT_VERSION_MAJOR@,@PROJECT_VERSION_MINOR@,@PROJECT_VERSION_PATCH@,0
+PRODUCTVERSION @PROJECT_VERSION_MAJOR@,@PROJECT_VERSION_MINOR@,@PROJECT_VERSION_PATCH@,0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS VS_FF_PRERELEASE
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Adam Chesters"
+            VALUE "FileDescription", "dcs2psvr2-shaker @DCS2PSVR2_SHAKER_DISPLAY_VERSION@"
+            VALUE "FileVersion", "@DCS2PSVR2_SHAKER_VERSION@"
+            VALUE "ProductName", "dcs2psvr2-shaker"
+            VALUE "ProductVersion", "@DCS2PSVR2_SHAKER_VERSION@"
+            VALUE "OriginalFilename", "dcs2psvr2-shaker.exe"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

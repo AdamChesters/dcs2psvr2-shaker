@@ -1,0 +1,5 @@
+#pragma once
+namespace shaker {
+inline constexpr char appVersion[] = "@DCS2PSVR2_SHAKER_VERSION@";
+inline constexpr char appVersionDisplay[] = "@DCS2PSVR2_SHAKER_DISPLAY_VERSION@";
+}

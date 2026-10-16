@@ -1,0 +1,13 @@
+{
+  "version": 6,
+  "configurePresets": [{
+    "name": "windows", "generator": "Visual Studio 18 2026", "architecture": "x64",
+    "binaryDir": "${sourceDir}/build",
+    "cacheVariables": {
+      "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+      "VCPKG_TARGET_TRIPLET": "x64-windows-static"
+    }
+  }],
+  "buildPresets": [{"name":"release", "configurePreset":"windows", "configuration":"Release"}],
+  "testPresets": [{"name":"release", "configurePreset":"windows", "configuration":"Release", "output":{"outputOnFailure":true}}]
+}

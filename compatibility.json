@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "toolkit": [
+    {
+      "sha256": "72ff35f055151b849cce9a71db55a541c205cb79fccc14ba7fae5a5c8089046f",
+      "abi": "int-results-v1",
+      "description": "Experimental PSVR2Toolkit CAPI with integer-result ABI; tested headset command interface."
+    },
+    {
+      "sha256": "a1487f3bb83748a3a7747a4b807b593549cd6ecbc5efd4881e057e9f201adc53",
+      "abi": "int-results-v1",
+      "description": "Official PSVR2Toolkit v1.0.0-experimental-2 Windows release; CAPI source matches the pinned reference."
+    }
+  ]
+}

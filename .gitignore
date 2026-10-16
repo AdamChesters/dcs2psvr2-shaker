@@ -1,0 +1,11 @@
+/build/
+/out/
+/dist/
+/vcpkg_installed/
+/work/
+/BUILD_PLAN.md
+/RESEARCH_NOTES.md
+*.user
+*.log
+imgui.ini
+.vs/

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 Alpha
+
+- App icon: embedded image metadata removed. No visual change.
+
 ## 0.1.1 Alpha
 
 - Feedback / Support: the feedback form now delivers messages. The delivery service was updated, so 0.1.0 can send feedback too.

@@ -1,6 +1,6 @@
 {
   "name": "dcs2psvr2-shaker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "builtin-baseline": "6fad4fa784ab2506e35144a7c3d64738976445ea",
   "dependencies": [
     { "name": "imgui", "features": ["win32-binding", "dx11-binding"] },

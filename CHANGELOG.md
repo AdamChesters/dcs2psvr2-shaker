@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 Alpha
+
+- Feedback / Support: the feedback form now delivers messages. The delivery service was updated, so 0.1.0 can send feedback too.
+- Feedback / Support panel checked against the shared support component 2.0.0.
+- Build warning fix in feedback sending. No changes to haptics, aircraft profiles or settings.
+
 ## 0.1.0 Alpha
 
 First release as dcs2psvr2-shaker.

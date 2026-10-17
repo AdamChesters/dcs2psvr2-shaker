@@ -53,7 +53,7 @@ void FeedbackClient::send(const Json& payload){
     worker_=std::jthread([this,payload]{
         FeedbackStatus result;
         try{post(payload);result={FeedbackState::Sent,"Feedback sent. Thank you!"};}
-        catch(const std::exception& error){result={FeedbackState::Failed,supportContent()["feedback"]["failure"].get<std::string>()};}
+        catch(const std::exception&){result={FeedbackState::Failed,supportContent()["feedback"]["failure"].get<std::string>()};}
         std::lock_guard lock(mutex_);status_=result;
     });
 }

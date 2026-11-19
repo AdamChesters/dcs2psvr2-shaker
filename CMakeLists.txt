@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.25)
-project(dcs2psvr2-shaker VERSION 0.1.2 LANGUAGES CXX)
+project(dcs2psvr2-shaker VERSION 0.1.3 LANGUAGES CXX)
 set(DCS2PSVR2_SHAKER_VERSION "${PROJECT_VERSION}-alpha")
-set(DCS2PSVR2_SHAKER_DISPLAY_VERSION "0.1.2 Alpha")
+set(DCS2PSVR2_SHAKER_DISPLAY_VERSION "0.1.3 Alpha")
 configure_file(src/version.hpp.in "${CMAKE_CURRENT_BINARY_DIR}/generated/version.hpp" @ONLY)
 if(NOT WIN32)
   message(FATAL_ERROR "dcs2psvr2-shaker currently targets Windows x64.")
@@ -29,7 +29,6 @@ add_dependencies(dcs2psvr2-shaker dcs2psvr2-shaker-bridge)
 add_custom_command(TARGET dcs2psvr2-shaker POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/dcs" "$<TARGET_FILE_DIR:dcs2psvr2-shaker>/dcs"
   COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/licenses" "$<TARGET_FILE_DIR:dcs2psvr2-shaker>/licenses"
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_SOURCE_DIR}/compatibility.json" "$<TARGET_FILE_DIR:dcs2psvr2-shaker>/compatibility.json"
   COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_SOURCE_DIR}/LICENSE" "$<TARGET_FILE_DIR:dcs2psvr2-shaker>/LICENSE")
 enable_testing()
 add_executable(shaker_tests tests/tests.cpp)
@@ -62,7 +61,7 @@ install(TARGETS dcs2psvr2-shaker dcs2psvr2-shaker-bridge RUNTIME DESTINATION . L
 install(DIRECTORY dcs licenses DESTINATION .)
 install(FILES docs/AIRCRAFT.md docs/EFFECTS.md docs/FUTURE_WORK.md docs/HARDWARE.md docs/PROTOCOL.md docs/SETUP.md docs/TELEMETRY.md docs/TESTING.md DESTINATION docs OPTIONAL)
 install(FILES assets/dcs2psvr2-shaker.ico assets/dcs2psvr2-shaker.png assets/README.md DESTINATION assets)
-install(FILES README.md CHANGELOG.md LICENSE THIRD_PARTY_NOTICES.md compatibility.json DESTINATION .)
+install(FILES README.md CHANGELOG.md LICENSE THIRD_PARTY_NOTICES.md DESTINATION .)
 
 add_executable(feedback_tests tests/feedback_tests.cpp)
 target_link_libraries(feedback_tests PRIVATE shaker_core)

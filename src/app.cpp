@@ -139,7 +139,7 @@ void App::renderSetup(){
         };
         mutedText("Quick checklist. Follow the linked projects for current requirements and full instructions.");
         ImGui::Spacing();ImGui::SeparatorText("Install once");
-        ImGui::TextWrapped("1. Install the newest compatible PSVR2Toolkit release. Check all releases, including experimental builds, and follow its installation guide.");
+        ImGui::TextWrapped("1. Install the latest experimental PSVR2Toolkit release (v1.0.0-experimental-2 or newer) and follow its installation guide.");
         link("Toolkit releases",L"https://github.com/BnuuySolutions/PSVR2Toolkit/releases");
         continueRow("Installation guide");link("Installation guide",L"https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Installation");
         ImGui::TextWrapped("2. Follow the headset jailbreak guide, including firmware requirements. Download and extract vr2jb for Windows.");

@@ -13,7 +13,9 @@ int wmain(int argc,wchar_t**argv){
     }
     try{
         const auto dll=appDirectory()/L"fake_toolkit.dll";
-        writeTextAtomic(appDirectory()/L"compatibility.json",Json({{"toolkit",Json::array({{{"sha256",sha256(dll)},{"abi","int-results-v1"}}})}}).dump());
+        // Only the one known-incompatible Toolkit build is refused; any other DLL, such as this fake, loads.
+        CHECK(toolkitTooOld("b769bd385e1a162d4488298d3803845afda3a083dd87249d94120782f6b9cf3c"));
+        CHECK(!toolkitTooOld(sha256(dll)));CHECK(!toolkitTooOld(""));
         const auto name=L"Local\\dcs2psvr2-shaker_FakeMotor_"+std::to_wstring(GetCurrentProcessId());
         auto mapping=CreateFileMappingW(INVALID_HANDLE_VALUE,nullptr,PAGE_READWRITE,0,sizeof(FakeMotorState),name.c_str());CHECK(mapping);
         auto state=static_cast<FakeMotorState*>(MapViewOfFile(mapping,FILE_MAP_READ|FILE_MAP_WRITE,0,0,sizeof(FakeMotorState)));CHECK(state);*state=FakeMotorState{};

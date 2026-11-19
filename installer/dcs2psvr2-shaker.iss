@@ -1,11 +1,11 @@
 #ifndef AppVersion
-  #define AppVersion "0.1.2-alpha"
+  #define AppVersion "0.1.3-alpha"
 #endif
 #ifndef AppNumericVersion
-  #define AppNumericVersion "0.1.2"
+  #define AppNumericVersion "0.1.3"
 #endif
 #ifndef AppDisplayVersion
-  #define AppDisplayVersion "0.1.2 Alpha"
+  #define AppDisplayVersion "0.1.3 Alpha"
 #endif
 #ifndef PackageDir
   #define PackageDir "..\dist\package"
@@ -42,6 +42,10 @@ SetupLogging=yes
 
 [Tasks]
 Name: "desktopicon"; Description: "Create a desktop shortcut"; Flags: unchecked
+
+[InstallDelete]
+; Toolkit build list used up to 0.1.2; no longer read.
+Type: files; Name: "{app}\compatibility.json"
 
 [Files]
 Source: "{#PackageDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

@@ -14,6 +14,7 @@ struct HostReply {
     int32_t result=0, motor=0;
     char detail[160]{};
 };
+bool toolkitTooOld(const std::string& sha256Hex);
 int runHapticsHost(const std::wstring& pipe,const fs::path& capi,DWORD parentPid,const wchar_t* ownerName=L"Local\\dcs2psvr2-shaker_HeadsetWriter_v1");
 class HapticsClient {
     HANDLE pipe_=INVALID_HANDLE_VALUE,process_=nullptr;

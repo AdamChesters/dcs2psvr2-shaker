@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 Alpha
+
+- PSVR2Toolkit: newer Toolkit releases, including v1.0.0-experimental-3, now work. The app no longer refuses Toolkit builds it has not seen before, so the "toolkit DLL build has not been validated" error is gone.
+- Only v1.0.0-experimental-1 is refused, with a message to install a newer Toolkit release.
+- Setup text now says to install the latest experimental PSVR2Toolkit release.
+
 ## 0.1.2 Alpha
 
 - App icon: embedded image metadata removed. No visual change.

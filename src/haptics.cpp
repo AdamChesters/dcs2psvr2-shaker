@@ -5,6 +5,9 @@
 #include <fstream>
 
 namespace shaker {
+// PSVR2Toolkit v1.0.0-experimental-1 exports the same symbols, but its rumble call returns
+// void, so its results cannot be read. Every other build is accepted without a hash check.
+bool toolkitTooOld(const std::string& sha256Hex){return sha256Hex=="b769bd385e1a162d4488298d3803845afda3a083dd87249d94120782f6b9cf3c";}
 namespace {
 void diagnostic(const std::string& line){
     try{wchar_t testLog[32768]{};
@@ -22,14 +25,8 @@ public:
     std::string error;
     bool load(const fs::path& path) {
         if(path.empty()||!fs::is_regular_file(path)){error="PSVR2Toolkit not found. Start SteamVR or select its CAPI DLL.";return false;}
-        const auto hash=sha256(path);
-        // Exact tested ABI list. Older DLLs export identical symbols with void returns.
-        bool known=false;
-        try {
-            const auto compatibility=Json::parse(readText(appDirectory()/L"compatibility.json"));
-            for(const auto& entry:compatibility.at("toolkit"))if(entry.at("sha256").get<std::string>()==hash && entry.at("abi")=="int-results-v1")known=true;
-        }catch(...){}
-        if(!known){error="This toolkit DLL build has not been validated. See Diagnostics / compatibility.";return false;}
+        std::string hash;try{hash=sha256(path);}catch(...){}
+        if(toolkitTooOld(hash)){error="This PSVR2Toolkit build is too old. Install the latest experimental PSVR2Toolkit release.";return false;}
         module_=LoadLibraryExW(path.c_str(),nullptr,LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR|LOAD_LIBRARY_SEARCH_DEFAULT_DIRS);
         if(!module_){error="Toolkit DLL or a dependency could not load (Windows "+std::to_string(GetLastError())+").";return false;}
         init_=reinterpret_cast<Init>(GetProcAddress(module_,"psvr2_toolkit_init"));

@@ -19,7 +19,7 @@ Windows x64; F/A-18C Hornet, F-16C Viper, A-10C/II, F-14A/B Tomcat, F-4E Phantom
 
 ## Prerequisites
 
-- **[PSVR2Toolkit](https://github.com/BnuuySolutions/PSVR2Toolkit)** — install a compatible experimental build and **follow its [headset jailbreaking instructions](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Jailbreaking-your-headset)**, including the required firmware/setup steps. Toolkit and `vr2jb.exe` are not bundled with this app.
+- **[PSVR2Toolkit](https://github.com/BnuuySolutions/PSVR2Toolkit)** — install the latest experimental release (v1.0.0-experimental-2 or newer) and **follow its [headset jailbreaking instructions](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Jailbreaking-your-headset)**, including the required firmware/setup steps. Toolkit and `vr2jb.exe` are not bundled with this app.
 - A PSVR2 headset connected to a Windows x64 PC, with its PC setup and SteamVR working.
 - DCS World and a [supported aircraft](docs/AIRCRAFT.md) for live flight effects.
 - You **MUST** jailbreak the headset every time you power it on again, before launching SteamVR.
@@ -55,7 +55,7 @@ Download the installer or portable ZIP from [Releases](https://github.com/AdamCh
 
 1. Exit **DCS, SteamVR, the PlayStation VR2 App and dcs2psvr2-shaker**. To exit dcs2psvr2-shaker fully, use its tray menu or **Settings → Exit application**; the window's X only hides it.
 2. Turn the headset on and keep it awake, with SteamVR still closed.
-3. Run **`vr2jb.exe`** from the compatible [vr2jb release](https://github.com/BnuuySolutions/vr2jb/releases) and wait for a successful unlock. Complete the Toolkit jailbreaking instructions first; see the [setup checklist](docs/SETUP.md) for links and startup order.
+3. Run **`vr2jb.exe`** from the latest [vr2jb release](https://github.com/BnuuySolutions/vr2jb/releases) and wait for a successful unlock. Complete the Toolkit jailbreaking instructions first; see the [setup checklist](docs/SETUP.md) for links and startup order.
 4. Start **SteamVR** and wait for its headset indicator to show connected.
 5. Launch **dcs2psvr2-shaker**. On first use, install the DCS hook from **Settings → DCS integration**.
 6. Launch **DCS** and enter a supported aircraft mission. Effects run automatically. Master and Mute control output; tests are optional.

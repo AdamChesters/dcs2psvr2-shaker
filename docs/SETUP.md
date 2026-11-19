@@ -4,7 +4,7 @@
 
 - Windows x64 and DCS World with a [supported aircraft](AIRCRAFT.md).
 - PSVR2 connected through its supported PC setup, with SteamVR working.
-- A compatible experimental PSVR2Toolkit driver and its matching CAPI DLL.
+- The latest experimental PSVR2Toolkit release (v1.0.0-experimental-2 or newer): its driver and matching CAPI DLL.
 - Headset rumble unlocked for the current power session. See the upstream [installation guide](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Installation) and [headset-unlock guide](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Jailbreaking-your-headset).
 
 ## Setup checklist
@@ -13,7 +13,7 @@ Open **Setup** above the status lights, or **Headset > Connection help > Open se
 
 Install once:
 
-1. Choose the newest compatible build from the [PSVR2Toolkit releases page](https://github.com/BnuuySolutions/PSVR2Toolkit/releases), including experimental releases, and follow its [installation guide](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Installation).
+1. Install the latest experimental release (v1.0.0-experimental-2 or newer) from the [PSVR2Toolkit releases page](https://github.com/BnuuySolutions/PSVR2Toolkit/releases) and follow its [installation guide](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Installation).
 2. Follow the [headset jailbreak guide](https://github.com/BnuuySolutions/PSVR2Toolkit/wiki/Jailbreaking-your-headset), including firmware requirements. Download and extract the Windows package from [vr2jb releases](https://github.com/BnuuySolutions/vr2jb/releases).
 3. Install the dcs2psvr2-shaker DCS export hook in **Settings > DCS integration**. Restart DCS if it was open.
 
